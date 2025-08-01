@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AquaID – Fish Identifier</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AquaID - Aquatic Species Identifier</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Welcome to AquaID</h1>
-  <p>Identify aquatic species instantly by photo.</p>
-  <button onclick="alert('Payments coming soon!')">Buy Premium</button>
+  <header>
+    <h1>AquaID</h1>
+    <p>Take a picture of any aquatic creature to identify it instantly.</p>
+  </header>
+  
+  <main>
+    <input type="file" id="imageInput" accept="image/*" capture="environment" />
+    <button id="identifyBtn">Identify Species</button>
+    
+    <section id="result"></section>
+  </main>
+  
+  <script src="app.js"></script>
 </body>
 </html>
