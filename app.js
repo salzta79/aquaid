@@ -1,7 +1,13 @@
 const identifyBtn = document.getElementById("identifyBtn");
 const imageInput = document.getElementById("imageInput");
 const resultSection = document.getElementById("result");
-const gallery = document.getElementById("gallery");
+const galleryContainer = document.getElementById("galleryContainer");
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuToggle.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
 
 const fishData = [
   {
@@ -33,9 +39,8 @@ const fishData = [
   }
 ];
 
-// Display gallery
 fishData.forEach(f => {
-  gallery.innerHTML += `
+  galleryContainer.innerHTML += `
     <div class="gallery-item">
       <img src="${f.img}" alt="${f.name}" />
       <p><strong>${f.name}</strong></p>
@@ -43,7 +48,6 @@ fishData.forEach(f => {
   `;
 });
 
-// Fake identification
 identifyBtn.addEventListener("click", async () => {
   if (!imageInput.files.length) {
     alert("Please upload a photo first!");
@@ -53,7 +57,6 @@ identifyBtn.addEventListener("click", async () => {
 
   await new Promise(res => setTimeout(res, 1200));
 
-  // Random fish result
   const fish = fishData[Math.floor(Math.random() * fishData.length)];
 
   resultSection.innerHTML = `
