@@ -8,8 +8,16 @@
 </head>
 <body>
   <header>
-    <h1>🐟 AquaID</h1>
-    <p>Identify fish species instantly with pictures & details.</p>
+    <div class="nav-container">
+      <h1>🐟 AquaID</h1>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+    <nav id="mobileMenu" class="hidden">
+      <a href="#">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#pro">Go Pro</a>
+    </nav>
   </header>
 
   <main>
@@ -20,9 +28,19 @@
 
     <section id="result"></section>
 
-    <section class="sample-gallery">
+    <section class="sample-gallery" id="gallery">
       <h2>Example Species</h2>
-      <div class="gallery" id="gallery"></div>
+      <div class="gallery" id="galleryContainer"></div>
+    </section>
+
+    <section id="about" class="info-section">
+      <h2>About AquaID</h2>
+      <p>AquaID helps you identify fish species instantly with real photos and details. Upgrade to Pro to unlock full species database and advanced features.</p>
+    </section>
+
+    <section id="pro" class="pro-section">
+      <h2>Unlock Pro Features</h2>
+      <button class="pro-btn">Upgrade Now</button>
     </section>
   </main>
 
